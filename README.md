@@ -1,34 +1,35 @@
 # 🖨️ PrintBot (Beta)
 
-Автоматический бот для печати вложений из электронной почты.
-Скрипт мониторит IMAP-ящик, скачивает вложения (PDF, Изображения) и отправляет их на указанные принтеры.
+An automated bot for printing email attachments.
+The script monitors an IMAP inbox, downloads attachments (PDF, Images), and sends them to specified printers.
 
-## ✨ Возможности
-- **Persistent Connection:** Постоянное соединение с сервером (без спама подключениями).
-- **Авто-восстановление:** Самостоятельно переподключается при разрыве сети.
-- **Умная маршрутизация:** PDF печатаются через SumatraPDF, картинки — через IrfanView или MS Paint.
-- **Фильтрация:** Белый список отправителей.
+## ✨ Features
+- **Persistent Connection:** Keeps a constant connection to the server (no connection spam).
+- **Auto-Recovery:** Automatically reconnects in case of network interruptions.
+- **Smart Routing:** PDFs are printed via SumatraPDF, images via IrfanView or MS Paint.
+- **Filtering:** Sender whitelist support.
 
-## 🚀 Установка и запуск (из исходного кода)
+## 🚀 Installation and Usage (from source)
 
-1. Установите Python 3.10+
-2. Установите зависимости:
+1. **Install Python 3.10+**.
+2. **Install dependencies**:
    ```bash
    pip install imap-tools pywin32
    ```
-3. Установите **IrfanView** (для картинок) и **SumatraPDF** (для PDF).
-4. Запустите скрипт. При первом запуске он создаст `settings.ini`.
-5. Настройте `settings.ini` (укажите сервер, логин, пароль и пути к принтерам).
+3. **Install IrfanView** (for images) and **SumatraPDF** (for PDFs).
+4. **Run the script**. On the first run, it will create `settings.ini`.
+5. **Configure `settings.ini`** (specify server, login, password, and printer paths).
 
-## 📦 Сборка в EXE
+## 📦 Build to EXE
 
-Для сборки в один файл используется PyInstaller:
+To build into a single executable file using PyInstaller:
+
 ```bash
-python -m PyInstaller --onefile --windowed --noconsole --icon=NONE gui_print_bot.py
+python -m PyInstaller --onefile --noconsole gui_print_bot.py
 ```
 
-## ⚠️ Важно
-Для работы требуются права на использование принтеров и доступ в интернет (порт 993).
+## ⚠️ Important
+Requires printer usage rights and internet access (IMAP port 993).
 
 ---
-**Статус:** Beta v5.0
+**Status:** Beta v5.0
